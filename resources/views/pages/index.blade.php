@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card mb-12 box-shadow">
+                        <div class="card article mb-12 box-shadow">
                             <div class="card-title text-center">New article</div>
                             <div class="card-subtitle text-center">19.04.2018</div>
                             <div class="card-body">
