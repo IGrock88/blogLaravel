@@ -14,6 +14,10 @@ class ArticleHandler{
 
     }
 
+    addArticle(article){
+
+    }
+
 
     renderArticles(){
 
