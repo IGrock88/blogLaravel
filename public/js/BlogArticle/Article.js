@@ -7,12 +7,4 @@ class Article {
         this.text = text;
         this.time = time;
     }
-
-    render(){
-
-    }
-
-    createComponent(){
-
-    }
 }

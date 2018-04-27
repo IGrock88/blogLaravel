@@ -21,8 +21,4 @@ class AjaxController extends Controller
         return response()->json($result);
     }
 
-    public function get(){
-        return response()->view("pages.hello", ["name" => "vasya"]);
-    }
-
 }
