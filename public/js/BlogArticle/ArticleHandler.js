@@ -9,7 +9,18 @@ class ArticleHandler{
     }
 
     loadArticles(startIndex, limit){
-
+        console.log("test");
+        axios({
+            method: 'get',
+            url: '/getblogs',
+            params: {
+                startIndex: startIndex,
+                limit: limit
+            }
+        })
+            .then(function (response) {
+                console.log(response.data);
+            });
 
 
     }

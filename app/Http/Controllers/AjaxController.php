@@ -8,11 +8,21 @@
 namespace App\Http\Controllers;
 
 
-class AjaxController
+use App\Blog;
+use Illuminate\Http\Request;
+
+class AjaxController extends Controller
 {
 
-    public function getBlogArticles(){
+    public function getblogs(Request $request){
+        $blog = new Blog();
 
+        $result = $blog->getBlogArticles($request->input('startIndex'), $request->input('limit'));
+        return response()->json($result);
+    }
+
+    public function get(){
+        return response()->view("pages.hello", ["name" => "vasya"]);
     }
 
 }

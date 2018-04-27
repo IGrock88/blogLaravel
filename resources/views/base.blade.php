@@ -9,6 +9,7 @@
     <script src="../../../js/lib/vue.min.js"></script>
     <script src="../../../js/lib/axios.min.js"></script>
     <script src="../../../js/main.js"></script>
+    <script src="../../../js/BlogArticle/ArticleHandler.js"></script>
     <title>Album example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->

@@ -15,8 +15,9 @@ Route::get('/', "BlogController@index");
 Route::get('/blog/view/{idBlog}', "BlogController@view");
 Route::get('/blog/edit/{idBlog}', "BlogController@edit");
 
-Route::get('/ajax/getBlogArticles', "AjaxController@getBlogArticles");
+Route::get('/getblogs', "AjaxController@getblogs");
 
+Route::get('/ajax/get', "AjaxController@get");
 
 
 

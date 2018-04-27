@@ -17,7 +17,7 @@ class BlogController extends Controller
         $blogModel = new Blog();
         $blogs = $blogModel->getBlogArticles(0, 8);
         $quantityBlogs = $blogModel->getBlogsQuantity();
-        return view("pages.index");
+        return response()->view("pages.index", $blogs);
     }
 
 
