@@ -5,7 +5,7 @@ class ArticleHandler{
     constructor(idContainer){
         this.idContainer = idContainer;
     }
-
+// test
     loadArticles(startIndex, limit){
         console.log("test");
         var idContainer = this.idContainer;
