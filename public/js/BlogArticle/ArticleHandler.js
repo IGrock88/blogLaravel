@@ -12,24 +12,40 @@ class ArticleHandler{
         var articleApp = new Vue({
             el: idContainer,
             data: {
-                posts: []
+                posts: [],
+                startIndex: startIndex,
+                limit: limit
             },
-            created: function () {
-                axios({
-                    method: 'get',
-                    url: '/getblogs',
-                    params: {
-                        startIndex: startIndex,
-                        limit: limit
-                    },
-                    context: this
-                }).then(function (response) {
-                    articleApp.posts = response.data;
+            created: function(){
+              this.loadPosts();
+            },
+            watch: {
+                startIndex: function(){
+                    this.loadPosts();
+                },
+                limit: function () {
+                    this.loadPosts();
+                }
+            },
+            methods: {
+                loadPosts: function () {
+                    axios({
+                        method: 'get',
+                        url: '/getblogs',
+                        params: {
+                            startIndex: this.startIndex,
+                            limit: this.limit
+                        },
+                        context: this
+                    }).then(function (response) {
+                        articleApp.posts = response.data;
 
-                    console.log(articleApp.posts);
-                });
+                        console.log(articleApp.posts);
+                    });
+                }
             }
         });
+        return articleApp;
 
     }
 

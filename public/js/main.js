@@ -1,7 +1,8 @@
+var app;
 window.onload = function () {
 
     var articles = new ArticleHandler("#articleHandler");
-    articles.loadArticles(0, 8);
+    app = articles.loadArticles(0, 8);
 
 
 

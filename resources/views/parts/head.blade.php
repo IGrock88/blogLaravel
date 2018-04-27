@@ -4,12 +4,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-    {{--<script src="../../../js/lib/vue.min.js"></script>--}}
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="../../../js/lib/vue.min.js"></script>
+    {{--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>--}}
     <script src="../../../js/lib/axios.min.js"></script>
     <script src="../../../js/main.js"></script>
     <script src="../../../js/BlogArticle/ArticleHandler.js"></script>
-    <script src="../../../js/BlogArticle/Article.js"></script>
     <title>Album example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
