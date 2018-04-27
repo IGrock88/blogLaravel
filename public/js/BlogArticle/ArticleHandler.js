@@ -9,39 +9,27 @@ class ArticleHandler{
     loadArticles(startIndex, limit){
         console.log("test");
         var idContainer = this.idContainer;
-        axios({
-            method: 'get',
-            url: '/getblogs',
-            params: {
-                startIndex: startIndex,
-                limit: limit
+        var articleApp = new Vue({
+            el: idContainer,
+            data: {
+                posts: []
             },
-            context: this
-        })
-            .then(function (response) {
-                Vue.component('post-container', {
-                    prop: ['article'],
-                    template: '<div class="row"><div class="col-md-12">' +
-                    '<div class="card article mb-12 box-shadow">' +
-                    '<div class="card-title text-center">{{article.title}}</div>' +
-                    '<div class="card-subtitle text-center">{{article.date}}</div>' +
-                    '<div class="card-body">' +
-                    '<p class="card-text preview">{{article.preview}}</p>' +
-                    '<div class="d-flex justify-content-between align-items-center"><div class="btn-group article__controls">' +
-                    '<a href="/blog/view/{{ article.id_blog }}" class="btn btn-sm btn-outline-secondary">View</a>' +
-                    '<a href="/blog/edit/{{ article.id_blog }}" class="btn btn-sm btn-outline-secondary">Edit</a>' +
-                    '</div>' +
-                    '</div></div></div></div></div>'
-                });
+            created: function () {
+                axios({
+                    method: 'get',
+                    url: '/getblogs',
+                    params: {
+                        startIndex: startIndex,
+                        limit: limit
+                    },
+                    context: this
+                }).then(function (response) {
+                    articleApp.posts = response.data;
 
-                new Vue({
-                    el: idContainer,
-                    data: {
-                        articles: response.data
-                    }
+                    console.log(articleApp.posts);
                 });
-            });
-
+            }
+        });
 
     }
 
