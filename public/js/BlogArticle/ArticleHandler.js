@@ -1,7 +1,7 @@
 "use strict";
 
 class ArticleHandler{
-
+//test
     constructor(idContainer){
         this.idContainer = idContainer;
     }
